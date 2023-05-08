@@ -5,14 +5,13 @@
     </NuxtLayout>
   </div>
 </template>
-<script setup>
+<script setup lang="ts">
 // You might choose this based on an API call or logged-in status
 const route = useRoute()
 let layout
 if(route.name == 'cms'){
   layout = 'cms'
 }else{
-  layout = 'default'
+  layout = 'home'
 }
-
 </script>

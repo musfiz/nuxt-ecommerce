@@ -1,0 +1,9 @@
+@import './mixins/_variables.scss';
+@import './mixins/_mixins';
+
+
+// Frontend all page scss
+@import './frontend/style';
+@import './frontend/layouts/header';
+@import './frontend/layouts/menubar';
+@import './frontend/home';
