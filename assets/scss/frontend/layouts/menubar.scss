@@ -3,14 +3,14 @@
   .menu-content{
       height: calc(100vh - 20px);
       overflow-y: auto;
-      @include custom_scrollbar();
+      @include sidemenu_scrollbar();
       .menu-item{
           display: flex;
           flex-direction: column;
           align-items: flex-start;
-          margin: 15px 0 70px 20px; 
+          margin: 15px 0 70px 8px; 
           .menu-item-group{
-              width: 195px;
+              width: 206px;
               margin-top: 2px;
               .item-parent{  
                   height: 28px;                  
@@ -25,7 +25,7 @@
                       @include font_style(14px,$black_63);
                   }
                   &:hover{
-                      background: linear-gradient(to right,#fff 0,#ccc 100%);
+                    background: linear-gradient(to right,#fff 0,#ffc993 100%);
                   } 
               }  
               .item-child-group{
@@ -43,7 +43,7 @@
                           @include font_style(14px,$black_63);
                       }
                       &:hover{
-                          background: linear-gradient(to right,#fff 0,#ccc 100%);
+                        background: linear-gradient(to right,#fff 0,#ffc993 100%);
                       } 
                   }
               }  

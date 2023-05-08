@@ -1,0 +1,9 @@
+
+@font-face {
+  font-family: 'segoe-ui';
+  src: url('segoe_ui-webfont.woff2') format('woff2'),
+       url('segoe_ui-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}

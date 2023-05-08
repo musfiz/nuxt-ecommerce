@@ -1,4 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  css:["@/assets/scss/app.scss"], // contains all global styles	
+  css:[
+    // contains all global styles	
+    "@/assets/fonts/segoeui.css",
+    "@/assets/scss/app.scss"
+  ], 
 })

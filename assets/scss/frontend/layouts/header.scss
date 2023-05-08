@@ -7,7 +7,7 @@
     background: $orange_93;
     border: 1px solid $orange_79;
     .nav-menu{
-          margin-left:5px;
+          margin-left: 8px;
           background: $orange_93;
           border: 1px solid $orange_93;
           border-radius: 4px;
@@ -36,9 +36,10 @@
           height: 23px;;
           outline: none;
           line-height: normal;
-          font-size: 16px;
+          font-size: 14px;
           border:none;
           margin: 10px;
+          font-family: "segoe-ui";
       }
       .search-btn{
         border: none;
@@ -56,7 +57,7 @@
         align-items: center;
         justify-content: center;
         margin: 5px 10px;
-        border-left: 1px solid $orange_61;
+        border-left: 1px solid $orange_79;
         a{
             margin-left: 10px;
             @include font_style(15px, $black_63, bold);
@@ -64,7 +65,7 @@
     }
     .nav-account{
         width: 120px;
-        border-right: 1px solid $orange_61;
+        border-right: 1px solid $orange_79;
     }
     .nav-cart{
         a{

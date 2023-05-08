@@ -86,7 +86,79 @@ export default{
             <img :src="'frontend/icons/menu/clean.png'" alt="">
             <a href="#">Cleaning & Clear</a>
             </div>
+        </div>       
+        <div class="menu-item-group">
+            <div class="item-parent">
+                <img :src="'frontend/icons/menu/book.png'" alt="">
+                <a href="#">Books & Stationary</a>
+            </div>
+        </div>  
+        <div class="menu-item-group">
+                <div class="item-parent">
+            <img :src="'frontend/icons/menu/grocery.png'" alt="">
+            <a href="#">Food & Grocery</a>
+                </div>
+        </div>
+        <div class="menu-item-group">
+                <div class="item-parent">
+            <img :src="'frontend/icons/menu/beauty.png'" alt="">
+            <a href="#">Beauty & Health</a>
+                </div>
+        </div> 
+        <div class="menu-item-group">
+            <div class="item-parent">
+            <img :src="'frontend/icons/menu/clean.png'" alt="">
+            <a href="#">Cleaning & Clear</a>
+            </div>
+        </div>       
+        <div class="menu-item-group">
+            <div class="item-parent">
+                <img :src="'frontend/icons/menu/book.png'" alt="">
+                <a href="#">Books & Stationary</a>
+            </div>
+        </div>  
+        <div class="menu-item-group">
+                <div class="item-parent">
+            <img :src="'frontend/icons/menu/grocery.png'" alt="">
+            <a href="#">Food & Grocery</a>
+                </div>
+        </div>
+        <div class="menu-item-group">
+                <div class="item-parent">
+            <img :src="'frontend/icons/menu/beauty.png'" alt="">
+            <a href="#">Beauty & Health</a>
+                </div>
+        </div> 
+        <div class="menu-item-group">
+            <div class="item-parent">
+            <img :src="'frontend/icons/menu/clean.png'" alt="">
+            <a href="#">Cleaning & Clear</a>
+            </div>
         </div>                     
+        <div class="menu-item-group">
+            <div class="item-parent">
+                <img :src="'frontend/icons/menu/book.png'" alt="">
+                <a href="#">Books & Stationary</a>
+            </div>
+        </div>  
+        <div class="menu-item-group">
+                <div class="item-parent">
+            <img :src="'frontend/icons/menu/grocery.png'" alt="">
+            <a href="#">Food & Grocery</a>
+                </div>
+        </div>
+        <div class="menu-item-group">
+                <div class="item-parent">
+            <img :src="'frontend/icons/menu/beauty.png'" alt="">
+            <a href="#">Beauty & Health</a>
+                </div>
+        </div> 
+        <div class="menu-item-group">
+            <div class="item-parent">
+            <img :src="'frontend/icons/menu/clean.png'" alt="">
+            <a href="#">Cleaning & Clear</a>
+            </div>
+        </div>       
     </div> 
   </div>  
 </template>
