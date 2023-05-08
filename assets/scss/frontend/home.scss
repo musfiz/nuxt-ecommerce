@@ -1,14 +1,26 @@
 .content-wrapper{
   width: calc(100% - 230px);
-  .content-slider{
+  margin: 2px;
+  .home-slider{
       margin: 10px;
-      .slider{
-          .swiper-slide{
-              img{
-                  width: 100%;
-                  height: auto;
-              }
+      .swiper {
+        width: 100%;
+        height: 250px;
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+          /* Center slide text vertically */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
           }
+        }
       }
   }
 }
