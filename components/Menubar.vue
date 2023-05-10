@@ -2,163 +2,138 @@
 export default{
   data(){
     return {
-      menuActive: false,
-      isRotate:false
+      menus: [
+        {
+          id: 1,
+          title: 'Favorites',
+          icon: 'favorites.png',
+          route: '/',
+          activeClass: false,
+          child: {}
+        },
+        {
+          id: 2,
+          title: 'Popular',
+          icon: 'popular.png',
+          route: '/',
+          activeClass: false,
+          child: {}
+        },
+        {
+          id: 3,
+          title: 'Flash Sales',
+          icon: 'flash.png',
+          route: '/',
+          activeClass: false,
+          child: {}
+        },
+        {
+          id: 4,
+          title: 'Foods',
+          icon: 'foods.png',
+          route: '/about',
+          activeClass: false,
+          child: {
+            rotate: false,
+            activeClass: false,
+            list:[
+              {
+                id: 1,
+                title: 'Fruits & Vegetable',
+                route: '/',
+                activeClass: false
+                
+              },
+              {
+                id: 2,
+                title: 'Meat & Fish',
+                route: '/',
+                activeClass: false                
+              },
+              {
+                id: 3,
+                title: 'Cooking',
+                route: '/',
+                activeClass: false                
+              }
+            ]
+          }
+        },
+        {
+          id: 5,
+          title: 'Personal Care',
+          icon: 'personal-care.png',
+          route: '/personal',
+          activeClass: false,
+          child: {
+            rotate: false,
+            activeClass: false,
+            list: [
+              {
+                id: 1,
+                title: "Women's Care",
+                route: '/',
+                activeClass: false                
+              },
+              {
+                id: 2,
+                title: "Men's Care",
+                route: '/',
+                activeClass: false                
+              }
+            ]
+          }
+        }
+      ]
     }
   },
   methods:{
-      toggleChildMenu(){
-          this.menuActive = !this.menuActive;
-          this.isRotate = !this.isRotate;
-      }
-    },
-    mounted(){}
+    toggleChildMenu(menu, child = {}){
+      let updateMenu = this.menus.map((item) => {        
+        if(item.id == menu.id){
+          item.activeClass = true
+          if(item.child.list){
+            item.child.rotate = 'true'
+            let updateChild = item.child.list.map((item2) => {
+              if(child && item2.id == child.id){
+                item2.activeClass = 'true'
+              }else{
+                item2.activeClass = ''
+              }
+              return item2
+            })
+            item.child.list = updateChild
+          }
+          return item
+        }else{
+          item.activeClass = ''
+          if(item.child.list){
+            item.child.rotate = ''
+          }
+          return item
+        }
+      }) 
+      this.menus = updateMenu
+    }
+  },
+  mounted(){}
 }
 </script>
 <template>
   <div class="menu-content">
     <div class="menu-item">  
-        <div class="menu-item-group">
-            <div class="item-parent">
-                <img :src="'frontend/icons/menu/man.png'" alt="">
-                <NuxtLink to="/">Man</NuxtLink>
-            </div>
-        </div>
-        <div class="menu-item-group">
-            <div class="item-parent">
-                <img :src="'frontend/icons/menu/women.png'" alt="">
-                <!-- <a href="#">Women</a> -->
-                 <NuxtLink to="/about">Women</NuxtLink>
-            </div>
-        </div>
-        <div class="menu-item-group">
-            <div class="item-parent">
-                <img :src="'frontend/icons/menu/kids.png'" alt="">
-                <a href="#">Baby & Kids</a>
-            </div>
-        </div> 
-        <div class="menu-item-group">
-            <div class="item-parent">
-                <img :src="'frontend/icons/menu/living.png'" alt="">
-                <a href="#">Home & Living</a> 
-            </div>                   
-        </div> 
-        <div class="menu-item-group">
-            <div class="item-parent" @click="toggleChildMenu()">
-                <img :src="'frontend/icons/menu/electronics.png'" alt="">
-                <a href="#">Electronics</a>
-                <img class="child-menu-icon" :src="'frontend/icons/chevron-right.svg'" alt="No Image" :class="{'rotate': isRotate}">
-            </div>
-            
-            <div class="item-child-group" :class="{'active': menuActive}">                            
-                <div class="item-child">
-                    <a href="#">Computing</a>                           
-                </div>                         
-                <div class="item-child">
-                    <a href="#">Home Appliances</a>                                              
-                </div>                         
-                <div class="item-child">
-                    <a href="#">Gadget</a>                            
-                </div>                         
-            </div>
-            
-        </div>   
-        <div class="menu-item-group">
-            <div class="item-parent">
-                <img :src="'frontend/icons/menu/book.png'" alt="">
-                <a href="#">Books & Stationary</a>
-            </div>
-        </div>  
-        <div class="menu-item-group">
-                <div class="item-parent">
-            <img :src="'frontend/icons/menu/grocery.png'" alt="">
-            <a href="#">Food & Grocery</a>
-                </div>
-        </div>
-        <div class="menu-item-group">
-                <div class="item-parent">
-            <img :src="'frontend/icons/menu/beauty.png'" alt="">
-            <a href="#">Beauty & Health</a>
-                </div>
-        </div> 
-        <div class="menu-item-group">
-            <div class="item-parent">
-            <img :src="'frontend/icons/menu/clean.png'" alt="">
-            <a href="#">Cleaning & Clear</a>
-            </div>
-        </div>       
-        <div class="menu-item-group">
-            <div class="item-parent">
-                <img :src="'frontend/icons/menu/book.png'" alt="">
-                <a href="#">Books & Stationary</a>
-            </div>
-        </div>  
-        <div class="menu-item-group">
-                <div class="item-parent">
-            <img :src="'frontend/icons/menu/grocery.png'" alt="">
-            <a href="#">Food & Grocery</a>
-                </div>
-        </div>
-        <div class="menu-item-group">
-                <div class="item-parent">
-            <img :src="'frontend/icons/menu/beauty.png'" alt="">
-            <a href="#">Beauty & Health</a>
-                </div>
-        </div> 
-        <div class="menu-item-group">
-            <div class="item-parent">
-            <img :src="'frontend/icons/menu/clean.png'" alt="">
-            <a href="#">Cleaning & Clear</a>
-            </div>
-        </div>       
-        <div class="menu-item-group">
-            <div class="item-parent">
-                <img :src="'frontend/icons/menu/book.png'" alt="">
-                <a href="#">Books & Stationary</a>
-            </div>
-        </div>  
-        <div class="menu-item-group">
-                <div class="item-parent">
-            <img :src="'frontend/icons/menu/grocery.png'" alt="">
-            <a href="#">Food & Grocery</a>
-                </div>
-        </div>
-        <div class="menu-item-group">
-                <div class="item-parent">
-            <img :src="'frontend/icons/menu/beauty.png'" alt="">
-            <a href="#">Beauty & Health</a>
-                </div>
-        </div> 
-        <div class="menu-item-group">
-            <div class="item-parent">
-            <img :src="'frontend/icons/menu/clean.png'" alt="">
-            <a href="#">Cleaning & Clear</a>
-            </div>
-        </div>                     
-        <div class="menu-item-group">
-            <div class="item-parent">
-                <img :src="'frontend/icons/menu/book.png'" alt="">
-                <a href="#">Books & Stationary</a>
-            </div>
-        </div>  
-        <div class="menu-item-group">
-                <div class="item-parent">
-            <img :src="'frontend/icons/menu/grocery.png'" alt="">
-            <a href="#">Food & Grocery</a>
-                </div>
-        </div>
-        <div class="menu-item-group">
-                <div class="item-parent">
-            <img :src="'frontend/icons/menu/beauty.png'" alt="">
-            <a href="#">Beauty & Health</a>
-                </div>
-        </div> 
-        <div class="menu-item-group">
-            <div class="item-parent">
-            <img :src="'frontend/icons/menu/clean.png'" alt="">
-            <a href="#">Cleaning & Clear</a>
-            </div>
-        </div>       
+      <div class="menu-item-group" v-for="menu in menus" :key="menu.id">
+          <div class="item-parent" @click="toggleChildMenu(menu)">
+              <img :src="`frontend/icons/menu/${menu.icon}`" alt="">
+              <NuxtLink :to="menu.route" :class="{'nuxt-link-active': menu.activeClass}">{{ menu.title }}</NuxtLink>
+              <img v-if="menu.child.list" class="child-menu-icon" :src="'frontend/icons/chevron-right.svg'" alt="No Image" :class="{'rotate': menu.child.rotate}">
+          </div>            
+          <div v-if="menu.child.list" class="item-child-group" :class="{'active': menu.activeClass}">                            
+              <div class="item-child" v-for="child in menu.child.list" :key="child.id">
+                  <a href="#" @click="toggleChildMenu(menu, child)">{{ child.title }}</a>                           
+              </div>                                      
+          </div>            
+      </div>   
     </div> 
   </div>  
 </template>

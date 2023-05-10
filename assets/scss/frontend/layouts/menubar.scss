@@ -21,34 +21,40 @@
                       margin-right: 10px;
                   }
                   a{
-                      width: 140px;
-                      @include font_style(14px,$black_63);
+                    width: 140px;
+                    @include font_style(14px, $black_63);
+                    &.nuxt-link-active {
+                        color: $blue_B0;
+                        font-weight: bold;
+                    }
                   }
+                  
                   &:hover{
                     background: linear-gradient(to right,#fff 0,#ffc993 100%);
                   } 
               }  
               .item-child-group{
-                  margin: 2px 0 0 10px;
-                  border-left: 1px dotted $white_B7; 
-                  display: none;
-                  .item-child{  
-                      display: flex;
-                      align-items: center;
-                      height: 25px;
-                      margin-left: 19px;                                       
-                      a{
-                          display: block;
-                          width: 100%;
-                          @include font_style(14px,$black_63);
-                      }
-                      &:hover{
-                        background: linear-gradient(to right,#fff 0,#ffc993 100%);
-                      } 
-                  }
+                    margin: 2px 0 0 10px;
+                    border-left: 1px dotted $white_B7; 
+                    display: none;
+                    .item-child{  
+                        display: flex;
+                        align-items: center;
+                        height: 25px;
+                        margin-left: 19px;                                       
+                        a{
+                            display: block;
+                            width: 100%;
+                            @include font_style(14px,$black_63);
+                        }
+                        &:hover{
+                            background: linear-gradient(to right,#fff 0,#ffc993 100%);
+                        } 
+                    }
               }  
               .active{
                   display: block;
+                  transition: all .2s linear;
               }
                            
           }
