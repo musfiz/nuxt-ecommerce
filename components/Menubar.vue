@@ -93,12 +93,12 @@ export default{
         if(item.id == menu.id){
           item.activeClass = true
           if(item.child.list){
-            item.child.rotate = 'true'
+            item.child.rotate = true
             let updateChild = item.child.list.map((item2) => {
               if(child && item2.id == child.id){
-                item2.activeClass = 'true'
+                item2.activeClass = true
               }else{
-                item2.activeClass = ''
+                item2.activeClass = false
               }
               return item2
             })
@@ -106,9 +106,9 @@ export default{
           }
           return item
         }else{
-          item.activeClass = ''
+          item.activeClass = false
           if(item.child.list){
-            item.child.rotate = ''
+            item.child.rotate = false
           }
           return item
         }
@@ -130,7 +130,7 @@ export default{
           </div>            
           <div v-if="menu.child.list" class="item-child-group" :class="{'active': menu.activeClass}">                            
               <div class="item-child" v-for="child in menu.child.list" :key="child.id">
-                  <a href="#" @click="toggleChildMenu(menu, child)">{{ child.title }}</a>                           
+                <NuxtLink :to="child.route" :class="{'nuxt-link-active': child.activeClass}" @click="toggleChildMenu(menu, child)">{{ child.title }}</NuxtLink>                          
               </div>                                      
           </div>            
       </div>   
