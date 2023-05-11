@@ -83,5 +83,11 @@
               transform:rotate(90deg);
           }
       }
+    &.hide{
+        display: none;
+    }
+    &.show{
+        display: block;
+    }
   }
 }

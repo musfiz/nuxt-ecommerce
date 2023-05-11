@@ -1,13 +1,10 @@
-<script lang="ts">
-export default {
-  data:()=> {
-
-  },
-  methods: {
-    toggleSideNavbar(){
-
-    }
-  }
+<script setup lang="ts">
+import { useNavMenuStore } from '~/stores/navMenu';
+const store = useNavMenuStore()
+function toggleSideNavbar(){
+  const status = store.getHamburgerMenuStatus
+  console.log(status)  
+  store.updateHamburgerMenuStatus(!status)
 }
 </script>
 <template>

@@ -5,4 +5,14 @@ export default defineNuxtConfig({
     "@/assets/fonts/segoeui.css",
     "@/assets/scss/app.scss"
   ], 
+  modules: [
+    '@nuxt/devtools',
+    '@pinia/nuxt'
+  ],
+  pinia: {
+    autoImports: [
+      'defineStore',
+      ['defineStore', 'definePiniaStore'],
+    ],
+  }
 })
