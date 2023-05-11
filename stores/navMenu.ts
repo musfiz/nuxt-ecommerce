@@ -8,7 +8,7 @@ export const useNavMenuStore = defineStore('navMenu', {
     getHamburgerMenuStatus: (state) => state.hamburgerMenuStatus
   },
   actions: {
-    updateHamburgerMenuStatus(status){
+    updateHamburgerMenuStatus(status:boolean){
       this.hamburgerMenuStatus = status
     }
   }
