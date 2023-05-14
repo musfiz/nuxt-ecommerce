@@ -27,17 +27,25 @@ function toggleSideNavbar(){
           </button>          
       </div>            
       <div class="nav-item">
-          <a href="">Complain & Help</a>
+          <a class="nav-link" href="">{{ $t('header.complain') }}</a>
       </div>
       <div class="nav-item">
-          <a href="">Track Order</a>
+        <span class="locale">
+          <NuxtLink class="nav-link" to="#"
+            @click="$i18n.setLocale('en')">EN</NuxtLink> |
+          <NuxtLink class="nav-link" to="#"
+            @click="$i18n.setLocale('bn')">বাং</NuxtLink>          
+        </span>
       </div>
-      <div class="nav-account">
-          <a href="">Sign in</a>
+      <!-- <div class="nav-item">
+          <a href="">{{ $t('header.trackOrder') }}</a>
+      </div> -->
+      <div class="nav-item sign-in">
+          <a class="nav-link" href="">{{ $t('header.signIn') }}</a>
       </div>
-      <div class="nav-cart">
-          <a href="#">Cart  <img :src="'frontend/icons/cart.svg'" alt=""></a>               
-      </div>
+      <!-- <div class="nav-cart">
+          <a href="#">{{ $t('header.cart') }}  <img :src="'frontend/icons/cart.svg'" alt=""></a>               
+      </div> -->
     </div>
   </div>
 </template>

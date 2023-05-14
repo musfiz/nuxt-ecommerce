@@ -5,6 +5,7 @@ let menus = reactive([
   {
     id: 1,
     title: 'Favorites',
+    titleBn: 'পছন্দের পণ্য',
     icon: 'favorites.png',
     route: '/',
     activeClass: false,
@@ -13,6 +14,7 @@ let menus = reactive([
   {
     id: 2,
     title: 'Popular',
+    titleBn: 'জনপ্রিয়',
     icon: 'popular.png',
     route: '/',
     activeClass: false,
@@ -21,6 +23,7 @@ let menus = reactive([
   {
     id: 3,
     title: 'Flash Sales',
+    titleBn: 'ফ্ল্যাশ সেলস',
     icon: 'flash.png',
     route: '/',
     activeClass: false,
@@ -29,6 +32,7 @@ let menus = reactive([
   {
     id: 4,
     title: 'Foods',
+    titleBn: 'খাবার সামগ্রী',
     icon: 'foods.png',
     route: '/about',
     activeClass: false,
@@ -39,6 +43,7 @@ let menus = reactive([
         {
           id: 1,
           title: 'Fruits & Vegetable',
+          titleBn: 'ফল এবং সবজি',
           route: '/',
           activeClass: false
           
@@ -46,12 +51,14 @@ let menus = reactive([
         {
           id: 2,
           title: 'Meat & Fish',
+          titleBn: 'মাছ এবং মাংস',
           route: '/',
           activeClass: false                
         },
         {
           id: 3,
           title: 'Cooking',
+          titleBn: 'রান্নাবান্না',
           route: '/',
           activeClass: false                
         }
@@ -61,6 +68,7 @@ let menus = reactive([
   {
     id: 5,
     title: 'Personal Care',
+    titleBn: 'প্রসাধন সামগ্রী',
     icon: 'personal-care.png',
     route: '/personal',
     activeClass: false,
@@ -71,12 +79,14 @@ let menus = reactive([
         {
           id: 1,
           title: "Women's Care",
+          titleBn: 'মহিলাদের ব্যবহার্য',
           route: '/',
-          activeClass: false                
+          activeClass: false               
         },
         {
           id: 2,
           title: "Men's Care",
+          titleBn: 'পুরুষদের ব্যবহার্য',
           route: '/',
           activeClass: false                
         }
@@ -111,6 +121,7 @@ function toggleChildMenu(menu, child = {}){
   }) 
   menus = updateMenu
 }
+
 </script>
 <template>
   <div class="menu-content" :class="[navMenuStore.getHamburgerMenuStatus ? 'hide': 'show']">
@@ -118,12 +129,14 @@ function toggleChildMenu(menu, child = {}){
       <div class="menu-item-group" v-for="menu in menus" :key="menu.id">
           <div class="item-parent" @click="toggleChildMenu(menu)">
               <img :src="`frontend/icons/menu/${menu.icon}`" alt="">
-              <NuxtLink :to="menu.route" :class="{'nuxt-link-active': menu.activeClass}">{{ menu.title }}</NuxtLink>
+              <NuxtLink v-if="$i18n.locale == 'en'" :to="menu.route" :class="{'nuxt-link-active': menu.activeClass}">{{ menu.title }}</NuxtLink>
+              <NuxtLink v-else :to="menu.route" :class="{'nuxt-link-active': menu.activeClass}">{{ menu.titleBn }}</NuxtLink>
               <img v-if="menu.child.list" class="child-menu-icon" :src="'frontend/icons/chevron-right.svg'" alt="No Image" :class="{'rotate': menu.child.rotate}">
           </div>            
           <div v-if="menu.child.list" class="item-child-group" :class="{'active': menu.activeClass}">                            
               <div class="item-child" v-for="child in menu.child.list" :key="child.id">
-                <NuxtLink :to="child.route" :class="{'nuxt-link-active': child.activeClass}" @click="toggleChildMenu(menu, child)">{{ child.title }}</NuxtLink>                          
+                <NuxtLink v-if="$i18n.locale == 'en'" :to="child.route" :class="{'nuxt-link-active': child.activeClass}" @click="toggleChildMenu(menu, child)">{{ child.title }}</NuxtLink>                          
+                <NuxtLink v-else :to="child.route" :class="{'nuxt-link-active': child.activeClass}" @click="toggleChildMenu(menu, child)">{{ child.titleBn }}</NuxtLink>                          
               </div>                                      
           </div>            
       </div>   
