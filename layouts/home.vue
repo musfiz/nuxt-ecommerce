@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <Header/> 
+    <Header /> 
     <div class="container">
         <div class="menu-wrapper" >
           <Menubar />    

@@ -14,7 +14,7 @@
               margin-top: 2px;
               cursor: pointer;
               .item-parent{  
-                  height: 28px;                  
+                  height: 24px;                  
                   display: flex;
                   align-items: center;                    
                   img{
@@ -23,7 +23,7 @@
                   }
                   a{
                     width: 100%;
-                    @include font_style(14px, $black_63);
+                    @include font_style(13px, $black_63, 400);
                     &.nuxt-link-active {
                         color: $blue_B0;
                         font-weight: bold;
@@ -48,10 +48,10 @@
                             font-size: 14px;
                             color: #63666A;
                             padding: 4px 0;
-                            @include font_style(14px,$black_63);
+                            @include font_style(13px, $black_63, 400);
                             &.nuxt-link-active {
                                 color: $orange_61;
-                                font-weight: bold;
+                                font-weight: 500;
                             }                            
                         }
                         &:hover{

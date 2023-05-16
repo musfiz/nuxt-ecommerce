@@ -34,7 +34,7 @@ function toggleSideNavbar(){
           <NuxtLink class="nav-link" to="javascript:void(0)"
             @click="$i18n.setLocale('en')">EN</NuxtLink> |
           <NuxtLink class="nav-link" to="javascript:void(0)"
-            @click="$i18n.setLocale('bn')">বাং</NuxtLink>          
+            @click="$i18n.setLocale('bn')"> বাং</NuxtLink>          
         </span>
       </div>
       <!-- <div class="nav-item">

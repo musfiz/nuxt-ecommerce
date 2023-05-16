@@ -30,7 +30,7 @@
       display: flex;
       align-items: center;
       background: $white;
-      border-radius: 4px;
+      border-radius: 3px;
       margin-right: 10px;
       input{
           width: 100%;
@@ -60,12 +60,12 @@
       justify-content: center;
       border-left: 1px solid $orange_79;        
       .nav-link{
-        @include font_style(15px, $black_63, bold);
+        @include font_style(14px, $black_63, bold);
       }
       &.sign-in{
         background: #ff686e;
         .nav-link{
-          @include font_style(15px, $white, bold);
+          @include font_style(14px, $white, bold);
         }
       }
       .locale{

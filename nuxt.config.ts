@@ -4,18 +4,20 @@ export default defineNuxtConfig({
     // contains all global styles	
     "@/assets/fonts/segoeui.css",
     "@/assets/scss/app.scss"
-  ], 
+  ],
+
   modules: [
-    '@nuxt/devtools',
     '@pinia/nuxt',
     '@nuxtjs/i18n',
   ],
+
   pinia: {
     autoImports: [
       'defineStore',
       ['defineStore', 'definePiniaStore'],
     ],
   },
+
   i18n: {
     locales: [
       {
@@ -34,5 +36,5 @@ export default defineNuxtConfig({
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',  // recommended
     }
-  }
+  },
 })
