@@ -7,7 +7,7 @@ let menus = reactive([
     title: 'Favorites',
     titleBn: 'পছন্দের পণ্য',
     icon: 'favorites.png',
-    route: '/',
+    route: '/favorite',
     activeClass: false,
     child: {}
   },
@@ -16,7 +16,7 @@ let menus = reactive([
     title: 'Popular',
     titleBn: 'জনপ্রিয়',
     icon: 'popular.png',
-    route: '/',
+    route: '/popular',
     activeClass: false,
     child: {}
   },
@@ -25,7 +25,7 @@ let menus = reactive([
     title: 'Flash Sales',
     titleBn: 'ফ্ল্যাশ সেলস',
     icon: 'flash.png',
-    route: '/',
+    route: '/flash-sales',
     activeClass: false,
     child: {}
   },
@@ -34,7 +34,7 @@ let menus = reactive([
     title: 'Foods',
     titleBn: 'খাবার সামগ্রী',
     icon: 'foods.png',
-    route: '/about',
+    route: '/',
     activeClass: false,
     child: {
       rotate: false,
@@ -61,7 +61,43 @@ let menus = reactive([
           titleBn: 'রান্নাবান্না',
           route: '/',
           activeClass: false                
-        }
+        },
+        {
+          id: 4,
+          title: 'Sauces & Pickles',
+          titleBn: 'সস এবং আচার',
+          route: '/',
+          activeClass: false                
+        },
+        {
+          id: 5,
+          title: 'Dairy & Eggs',
+          titleBn: 'দুগ্ধজাত দ্রব্য এবং ডিম',
+          route: '/',
+          activeClass: false                
+        },
+        {
+          id: 6,
+          title: 'Breakfast',
+          titleBn: 'নাশতা',
+          route: '/',
+          activeClass: false                
+        },
+        {
+          id: 7,
+          title: 'Candy & Chocolate',
+          titleBn: 'ক্যান্ডি এন্ড চকলেট',
+          route: '/',
+          activeClass: false                
+        },
+        {
+          id: 8,
+          title: 'Snacks',
+          titleBn: 'জল খাবার',
+          route: '/',
+          activeClass: false                
+        },
+        
       ]
     }
   },
@@ -70,7 +106,7 @@ let menus = reactive([
     title: 'Personal Care',
     titleBn: 'প্রসাধন সামগ্রী',
     icon: 'personal-care.png',
-    route: '/personal',
+    route: '/personal-care',
     activeClass: false,
     child: {
       rotate: false,
@@ -122,15 +158,20 @@ function toggleChildMenu(menu, child = {}){
   menus = updateMenu
 }
 
+function storeSelectedMenuInStore(menu, child = {}){
+  navMenuStore.updateSelectedMenu(menu)
+}
+
 </script>
 <template>
-  <div class="menu-content" :class="[navMenuStore.getHamburgerMenuStatus ? 'hide': 'show']">
+  <div class="menu-wrapper" :class="[navMenuStore.getHamburgerMenuStatus ? 'hide': 'show']">
+    <div class="menu-content">
     <div class="menu-item">  
       <div class="menu-item-group" v-for="menu in menus" :key="menu.id">
           <div class="item-parent" @click="toggleChildMenu(menu)">
               <img :src="`frontend/icons/menu/${menu.icon}`" alt="">
-              <NuxtLink v-if="$i18n.locale == 'en'" :to="menu.route" :class="{'nuxt-link-active': menu.activeClass}">{{ menu.title }}</NuxtLink>
-              <NuxtLink v-else :to="menu.route" :class="{'nuxt-link-active': menu.activeClass}">{{ menu.titleBn }}</NuxtLink>
+              <NuxtLink v-if="$i18n.locale == 'en'" :to="menu.route" :class="{'nuxt-link-active': menu.activeClass}" @click=" storeSelectedMenuInStore(menu)">{{ menu.title }}</NuxtLink>
+              <NuxtLink v-else :to="menu.route" :class="{'nuxt-link-active': menu.activeClass}" @click=" storeSelectedMenuInStore(menu)">{{ menu.titleBn }}</NuxtLink>
               <img v-if="menu.child.list" class="child-menu-icon" :src="'frontend/icons/chevron-right.svg'" alt="No Image" :class="{'rotate': menu.child.rotate}">
           </div>            
           <div v-if="menu.child.list" class="item-child-group" :class="{'active': menu.activeClass}">                            
@@ -142,4 +183,5 @@ function toggleChildMenu(menu, child = {}){
       </div>   
     </div> 
   </div>  
+  </div>
 </template>

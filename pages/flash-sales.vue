@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>Personal Page</h1>
+    <h1>Flash Sales</h1>
   </div>
 </template>

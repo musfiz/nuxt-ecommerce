@@ -1,4 +1,7 @@
 .header-wrapper{
+  position: fixed;
+  width: 100%;
+  z-index: 4;
   .header-nav{
     display:flex;
     align-items: center;

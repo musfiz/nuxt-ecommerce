@@ -2,7 +2,7 @@
   <div class="page">
     <Header /> 
     <div class="container">
-        <div class="menu-wrapper" >
+        <div class="menu-container" >
           <Menubar />    
         </div> 
         <div class="content-wrapper">
@@ -18,6 +18,6 @@
 } 
 
 .container{
-    display: flex;
+  display: flex;
 }
 </style>
