@@ -16,8 +16,4 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 } 
-
-.container{
-  display: flex;
-}
 </style>
