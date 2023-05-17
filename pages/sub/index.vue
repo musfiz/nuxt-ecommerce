@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h1>Personal Care</h1>
+      Sub Page
   </div>
 </template>
