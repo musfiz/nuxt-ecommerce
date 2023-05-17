@@ -26,11 +26,17 @@ function toggleSideNavbar(){
             </svg>
           </button>          
       </div>            
-      <div class="nav-item">
+      <div class="nav-item help">
           <a class="nav-link" href="">{{ $t('header.complain') }}</a>
       </div>
-      <div class="nav-item">
-        <span class="locale">
+      <div class="nav-item notification">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+          <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+        </svg>
+        <span class="red-dot"></span>
+      </div>
+      <div class="nav-item locale">
+        <span>
           <NuxtLink class="nav-link" to="javascript:void(0)"
             @click="$i18n.setLocale('en')">EN</NuxtLink> |
           <NuxtLink class="nav-link" to="javascript:void(0)"
@@ -41,7 +47,7 @@ function toggleSideNavbar(){
           <a href="">{{ $t('header.trackOrder') }}</a>
       </div> -->
       <div class="nav-item sign-in">
-          <a class="nav-link" href="">{{ $t('header.signIn') }}</a>
+          <a class="nav-link" href="javascript:void(0)">{{ $t('header.signIn') }}</a>
       </div>
       <!-- <div class="nav-cart">
           <a href="#">{{ $t('header.cart') }}  <img :src="'frontend/icons/cart.svg'" alt=""></a>               

@@ -52,7 +52,6 @@
       }
     }
     .nav-item {
-      width: 120px;
       height: 52px;
       padding: 0 6px;
       display: flex;
@@ -62,18 +61,53 @@
       .nav-link{
         @include font_style(14px, $black_63, bold);
       }
-      &.sign-in{
-        background: #ff686e;
-        .nav-link{
-          @include font_style(14px, $white, bold);
+      &.help{
+        width: 100px;
+        &:hover{
+          background: $orange_61;
         }
       }
-      .locale{
+      &.notification{
+        width: 40px;
+        cursor: pointer;
+        svg{
+          color: $black_63;
+        }
+        .red-dot{
+          margin-left: -13%;
+          margin-bottom: 21%;
+          height: 7px;
+          width: 7px;
+          background-color: #f2770b;
+          border-radius: 50%;
+        }
+        &:hover{
+          background: $orange_61;
+        }
+      }
+      &.locale{
+        width: 60px;
         .nav-link{
           &:focus{
             color: #ff686e;
           }
         }
+      }
+      &.sign-in{
+        width: 120px;
+        cursor: pointer;
+        background: #ff686e;
+        .nav-link{
+          width: 100%;
+          height: 50px;
+          color: $white;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      &:hover{
+        opacity: 1;
       }
     }
   }  
