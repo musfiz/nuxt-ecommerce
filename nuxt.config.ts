@@ -1,9 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/scss/app.scss" as *;'
+        }
+      }
+    }
+  },
   css:[
     // contains all global styles	
     "@/assets/fonts/segoeui.css",
-    "@/assets/scss/app.scss"
   ],
 
   modules: [
