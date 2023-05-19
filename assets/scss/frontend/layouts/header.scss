@@ -2,10 +2,12 @@
   position: fixed;
   width: 100%;
   z-index: 4;
+  top: 0;
+  left: 0;
   .header-nav{
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     height: 52px;
     background: $orange_93;
     border: 1px solid $orange_79;
@@ -28,7 +30,7 @@
         }
     }
     .nav-search{
-      width: 60%;
+      width: 80%;
       height: 40px;
       display: flex;
       align-items: center;
@@ -89,7 +91,7 @@
         }
       }
       &.locale{
-        width: 60px;
+        width: 100px;
         .nav-link{
           &:focus{
             color: #ff686e;
