@@ -34,13 +34,29 @@
     margin-top: 20px;
     .category-header{
       .breadcrumb {
-        @include font_style(15px, $black_63, 700)
+        @include font_style(15px, $black_63, 700);
+        .child{
+          &::before{
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            margin: 1px 10px;
+            -webkit-transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+            -o-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+          }
+        }
       }
     }
     .category-body{
       .category-wrapper{
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         flex-wrap: wrap;
         .category-items{
           width: 190px;

@@ -1,5 +1,5 @@
 <template>
   <div>
-      Sub Page
+    Search Page: 
   </div>
 </template>

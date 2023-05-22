@@ -1,3 +1,8 @@
+<script setup lang="ts">
+onMounted(() => {
+  console.log('This is initial mounted which is called first')
+})
+</script>
 <template>
   <div class="page">
     <Header /> 

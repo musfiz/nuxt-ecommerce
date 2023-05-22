@@ -16,7 +16,7 @@ function toggleSideNavbar(){
         </svg>
       </button>
       <div class="nav-brand">
-          <img :src="'frontend/logo.png'" alt="">
+          <img src="~/assets/frontend/logo.png" alt="">
       </div>
       <div class="nav-search">          
           <input type="text" placeholder="Search for products (e.g. eggs, milk, potato)">
