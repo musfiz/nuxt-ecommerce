@@ -49,6 +49,7 @@ let menus = reactive([
           titleBn: 'ফল এবং সবজি',
           route: '/fruits-vegetable',
           type: 'child',
+          imageName: 'fruits.jpg',
           activeClass: false
           
         },
@@ -58,6 +59,7 @@ let menus = reactive([
           titleBn: 'মাছ এবং মাংস',
           route: '/meat-fish',
           type: 'child',
+          imageName: 'meat.jpg',
           activeClass: false                
         },
         {
@@ -66,6 +68,7 @@ let menus = reactive([
           titleBn: 'রান্নাবান্না',
           route: '/cooking',
           type: 'child',
+          imageName: 'cook.jpg',
           activeClass: false                
         },
         {
@@ -74,6 +77,7 @@ let menus = reactive([
           titleBn: 'সস এবং আচার',
           route: '/sauces-pickles',
           type: 'child',
+          imageName: 'sauces.jpg',
           activeClass: false                
         },
         {
@@ -82,6 +86,7 @@ let menus = reactive([
           titleBn: 'দুগ্ধজাত দ্রব্য এবং ডিম',
           route: '/dairy-egg',
           type: 'child',
+          imageName: 'dairy.jpg',
           activeClass: false                
         },
         {
@@ -90,6 +95,7 @@ let menus = reactive([
           titleBn: 'নাশতা',
           route: '/breakfast',
           type: 'child',
+          imageName: 'breakfast.jpg',
           activeClass: false                
         },
         {
@@ -98,6 +104,7 @@ let menus = reactive([
           titleBn: 'ক্যান্ডি এন্ড চকলেট',
           route: '/candy-chocolate',
           type: 'child',
+          imageName: 'candy.jpg',
           activeClass: false                
         },
         {
@@ -106,6 +113,7 @@ let menus = reactive([
           titleBn: 'জল খাবার',
           route: '/snack',
           type: 'child',
+          imageName: 'snacks.jpg',
           activeClass: false                
         },
         
@@ -130,6 +138,7 @@ let menus = reactive([
           titleBn: 'মহিলাদের ব্যবহার্য',
           route: '/women-care',
           type: 'child',
+          imageName: 'women-care.jpg',
           activeClass: false               
         },
         {
@@ -138,6 +147,52 @@ let menus = reactive([
           titleBn: 'পুরুষদের ব্যবহার্য',
           route: '/men-care',
           type: 'child',
+          imageName: 'men-care.jpg',
+          activeClass: false                
+        },
+        {
+          id: 3,
+          title: "Hand Wash",
+          titleBn: 'হ্যান্ড ওয়াশ',
+          route: '/hand-wash',
+          type: 'child',
+          imageName: 'hand-wash.jpg',
+          activeClass: false                
+        },
+        {
+          id: 4,
+          title: "Tissue & Wipes",
+          titleBn: 'টিস্যু এবং ওয়াইপ্স',
+          route: '/tissue-wipes',
+          type: 'child',
+          imageName: 'tissue.jpg',
+          activeClass: false                
+        },
+        {
+          id: 5,
+          title: "Oral Care",
+          titleBn: 'মুখের ব্যবহার্য',
+          route: '/oral-care',
+          type: 'child',
+          imageName: 'oral-care.jpg',
+          activeClass: false                
+        },
+        {
+          id: 6,
+          title: "Skin Care",
+          titleBn: 'ত্বক এর ব্যবহার্য',
+          route: '/skin-care',
+          type: 'child',
+          imageName: 'skin-care.jpg',
+          activeClass: false                
+        },
+        {
+          id: 2,
+          title: "Talcom Powder",
+          titleBn: 'ট্যালকম পাউডার',
+          route: '/telcom-powder',
+          type: 'child',
+          imageName: 'talcom-powder.jpg',
           activeClass: false                
         }
       ]
@@ -178,7 +233,7 @@ function storeSelectedMenuInStore(menu, child = {}){
 
 </script>
 <template>
-  <div class="menu-wrapper" :class="[navMenuStore.getHamburgerMenuStatus ? 'hide' : 'show']">
+  <div class="menu-wrapper">
     <div class="menu-content">
       <div class="menu-item">
         <div class="menu-item-group" v-for="menu in menus" :key="menu.id">

@@ -5,5 +5,9 @@ export default {
     trackOrder: 'অর্ডার ট্র্যাক করুন ',
     cart: 'কার্ট',
     signIn: 'সাইন ইন'
+  },
+  cart: {
+    info: 'পন্য',
+    buttonTitle: 'বন্ধ করুন'
   }
 }

@@ -1,0 +1,40 @@
+.cartbar-wrapper {
+  position: fixed;
+  box-sizing: border-box;
+  box-shadow: -2px 0 12px 0 rgba(143,143,143,.38);
+  .cartbar-content {
+    height: 100vh;
+    .cartbar-item {
+      width: 318px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      .cartbar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: $white_E7;
+        padding: 8px 20px;
+        .cart-info {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include font_style(15px, $black_63, 700);
+          .cart-bag{
+            width: 26px;
+            object-fit: fill;
+            margin-right: 10px;
+          }
+        }
+
+        .btn-close {
+          width: 80px;
+          padding: 6px 0;
+          border: 1px solid $white_B7;
+          cursor: pointer;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}

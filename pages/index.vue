@@ -2,6 +2,6 @@
 </script>
 <template>
   <div>
-    Index Page
+    <h1>Index Page</h1>
   </div>
 </template>

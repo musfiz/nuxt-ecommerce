@@ -101,7 +101,7 @@ const childMenu = computed(() => {
         <!-- category items -->
         <div class="category-items" v-for="menu in menus.child.list" :key="menu.id" v-show="menus.child.list">
           <div class="category-image">
-            <img :src="`frontend/category/${menu.id}.jpg`" alt="No Image" />
+            <img :src="`frontend/category/${menu.imageName}`" alt="No Image" />
           </div>
           <div class="category-title">
             <nuxt-link class="category-link" to="#">{{ $i18n.locale == 'en' ? menu.title : menu.titleBn

@@ -15,6 +15,21 @@ h1, h2, h3, h4, h5, h6, p {
 .container{
   display: flex;
   .menu-container {
-    height: 100vh;
+    min-width: 220px;
+    padding-top: 50px;
+    &.hide {
+      display: none;
+    }
+  
+    &.show {
+      display: block;
+    }
+  }
+  .content-wrapper{
+    width: 100%;
+  }
+  .cartbar-container{
+    min-width: 318px;
+    padding-top: 50px;
   }
 }

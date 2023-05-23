@@ -5,5 +5,9 @@ export default {
     trackOrder: 'Track Order',
     cart: 'Cart',
     signIn: 'Sign In'
+  },
+  cart: {
+    info: 'Items',
+    buttonTitle: 'Close'
   }
 }
