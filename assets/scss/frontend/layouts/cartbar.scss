@@ -35,6 +35,40 @@
           border-radius: 3px;
         }
       }
+      .delivery-policy{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: $black_63;
+        padding: 8px 8px;
+        @include font_style(12px, $white, 400);
+        .amount{
+          display: flex;
+          span{
+            margin-left:5px;
+          }
+          .info{
+            cursor: pointer;
+            padding-top:2px;
+          }
+        }
+      }
+      .cartbar-item{
+        height: 530px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .cartbar-empty{
+          img{
+            width: 230px;   
+            margin: 20px;         
+          }
+          p{
+            @include font_style(17px, $white_B7);
+            margin: 0 15px;
+          }
+        }
+      }
     }
   }
 }

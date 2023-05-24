@@ -8,6 +8,8 @@ export default {
   },
   cart: {
     info: 'Items',
-    buttonTitle: 'Close'
+    buttonTitle: 'Close',
+    deliveryPolicy: 'You have reduced delivery charge',
+    emptyCart: 'Your shopping bag is empty. Start shopping',
   }
 }

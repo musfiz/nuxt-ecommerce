@@ -8,6 +8,8 @@ export default {
   },
   cart: {
     info: 'পন্য',
-    buttonTitle: 'বন্ধ করুন'
+    buttonTitle: 'বন্ধ করুন',
+    deliveryPolicy: 'আপনি বহন খরচ কমিয়েছেন',
+    emptyCart: 'আপনার বাজারের ব্যাগটি খালি, বাজার শুরু করুন।',
   }
 }
