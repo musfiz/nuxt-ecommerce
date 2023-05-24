@@ -12,5 +12,6 @@ export default {
     deliveryPolicy: 'আপনি বহন খরচ কমিয়েছেন',
     emptyCart: 'আপনার বাজারের ব্যাগটি খালি, বাজার শুরু করুন।',
     specialCodeHeader: 'স্পেশাল কোড আছে?',
+    hotline: 'হটলাইন',
   }
 }

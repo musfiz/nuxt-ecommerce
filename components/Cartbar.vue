@@ -35,7 +35,7 @@
           </div>
           <div class="special-code-content">
             <div class="special-code-header">
-              <div class="icon arrow-down">
+              <div class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                   class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
                   <path fill-rule="evenodd"
@@ -45,10 +45,16 @@
               <p>{{ $t('cart.specialCodeHeader') }}</p>
             </div>
             <div class="special-code-body">
-                
+                <input class="input" type="text" placeholder="রেফারেল/ডিসকাউন্ট কোড">
+                <button class="btn-apply"> Apply</button>
+                <button class="btn-close"> close</button>
             </div>
+          </div>
+          <div class="hotline-content">
+            <p>{{ $t('cart.hotline') }} : 16250</p>
           </div>
         </div>
       </div>
     </div>
-</div></template>
+</div>
+</template>
