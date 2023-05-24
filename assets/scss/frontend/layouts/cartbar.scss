@@ -1,26 +1,31 @@
 .cartbar-wrapper {
   position: fixed;
   box-sizing: border-box;
-  box-shadow: -2px 0 12px 0 rgba(143,143,143,.38);
+  box-shadow: -2px 0 12px 0 rgba(143, 143, 143, .38);
+
   .cartbar-content {
     height: 100vh;
-    .cartbar-item {
+
+    .cartbar {
       width: 318px;
       display: flex;
       flex-direction: column;
       flex-wrap: nowrap;
+
       .cartbar-header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         background: $white_E7;
         padding: 8px 20px;
+
         .cart-info {
           display: flex;
           align-items: center;
           justify-content: center;
           @include font_style(15px, $black_63, 700);
-          .cart-bag{
+
+          .cart-bag {
             width: 26px;
             object-fit: fill;
             margin-right: 10px;
@@ -35,38 +40,72 @@
           border-radius: 3px;
         }
       }
-      .delivery-policy{
+
+      .delivery-policy {
         display: flex;
         align-items: center;
         justify-content: space-between;
         background-color: $black_63;
         padding: 8px 8px;
         @include font_style(12px, $white, 400);
-        .amount{
+
+        .amount {
           display: flex;
-          span{
-            margin-left:5px;
+
+          span {
+            margin-left: 5px;
           }
-          .info{
+
+          .info {
             cursor: pointer;
-            padding-top:2px;
+            padding-top: 2px;
           }
         }
       }
-      .cartbar-item{
+
+      .cart-item {
         height: 530px;
         display: flex;
         align-items: center;
         justify-content: center;
-        .cartbar-empty{
-          img{
-            width: 230px;   
-            margin: 20px;         
+
+        .cart-empty {
+          img {
+            width: 310px;
           }
-          p{
+
+          p {
             @include font_style(17px, $white_B7);
+            text-align: center;
             margin: 0 15px;
           }
+        }
+        .product-item{
+
+        }
+      }
+      .special-code-content{
+        background: $white_E7;
+        .special-code-header{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          padding: 10px;
+          @include font_style(14px, $black_63);
+          .icon{
+            display: flex;
+            margin-right: 5px;
+            &.arrow-down {
+              transform: rotate(-180deg);
+            }
+          }
+          &:hover{
+            background: $white_B7;
+          }
+        }
+        .special-code-body{
+          
         }
       }
     }
