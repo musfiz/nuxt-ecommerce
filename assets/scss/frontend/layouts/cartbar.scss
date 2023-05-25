@@ -5,7 +5,48 @@
 
   .cartbar-content {
     height: 100vh;
-
+    .cartbar-btn {
+      cursor: pointer;
+      position: absolute;
+      left: -18px;
+      top: 40%;
+      margin: auto;
+      height: 70px;
+      width: 16px;
+      border-bottom-left-radius: 3px;
+      border-top-left-radius: 3px;
+      color: #fff;
+      background-color: #b7b7b7;
+      border: 1px solid rgba(0,0,0,.1);
+      &::before{
+        content: "";
+        width: 15px;
+        height: 4px;
+        background: #fff;
+        display: block;
+        position: absolute;
+        -ms-transform: rotate(-65deg);
+        -webkit-transform: rotate(-65deg);
+        -moz-transform: rotate(-65deg);
+        -o-transform: rotate(-65deg);
+        transform: rotate(-65deg);
+        margin-top: 38px;
+      }
+      &::after{
+        content: "";
+        width: 15px;
+        height: 4px;
+        background: #fff;
+        display: block;
+        position: absolute;
+        -ms-transform: rotate(65deg);
+        -webkit-transform: rotate(65deg);
+        -moz-transform: rotate(65deg);
+        -o-transform: rotate(65deg);
+        transform: rotate(65deg);
+        margin-top: 26px;
+      }
+    }
     .cartbar {
       width: 318px;
       display: flex;

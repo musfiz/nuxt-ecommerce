@@ -2,6 +2,7 @@
   <div>
     <div class="cartbar-wrapper">
       <div class="cartbar-content">
+        <div class="cartbar-btn"></div>
         <div class="cartbar">
           <div class="cartbar-header">
             <div class="cart-info">
