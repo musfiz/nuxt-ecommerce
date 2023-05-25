@@ -1,10 +1,9 @@
 <script setup lang="ts">
 import { useNavMenuStore } from '~/stores/navMenu';
-const store = useNavMenuStore()
+const navMenuStore = useNavMenuStore()
 function toggleSideNavbar(){
-  const status = store.getHamburgerMenuStatus
-  console.log(status)  
-  store.updateHamburgerMenuStatus(!status)
+  const status = navMenuStore.getHamburgerMenuStatus
+  navMenuStore.updateHamburgerMenuStatus(!status)
 }
 </script>
 <template>

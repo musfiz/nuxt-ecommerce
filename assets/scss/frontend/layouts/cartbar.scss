@@ -5,7 +5,7 @@
 
   .cartbar-content {
     height: 100vh;
-    .cartbar-btn {
+    .cartbar-close-btn {
       cursor: pointer;
       position: absolute;
       left: -18px;
@@ -111,8 +111,12 @@
         justify-content: center;
 
         .cart-empty {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
           img {
-            width: 310px;
+            width: 230px;
           }
 
           p {

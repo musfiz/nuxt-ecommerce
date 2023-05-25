@@ -12,6 +12,7 @@ export default {
     deliveryPolicy: 'You have reduced delivery charge',
     emptyCart: 'Your shopping bag is empty. Start shopping',
     specialCodeHeader: 'Have a special code?',
+    specialCodePlaceholder: '',
     hotline: 'Hotline',
   }
 }

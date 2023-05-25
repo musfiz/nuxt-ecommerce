@@ -1,8 +1,17 @@
+<script setup lang="ts">
+import { useCartStore } from "~/stores/cart"
+const cartStore = useCartStore()
+
+const updateCartbarStatus = () => {
+  const status = cartStore.getCartbarStatus
+  cartStore.updateCartbarStatus(!status)
+}
+</script>
 <template>
   <div>
     <div class="cartbar-wrapper">
       <div class="cartbar-content">
-        <div class="cartbar-btn"></div>
+        <div class="cartbar-close-btn" @click="updateCartbarStatus"></div>
         <div class="cartbar">
           <div class="cartbar-header">
             <div class="cart-info">
