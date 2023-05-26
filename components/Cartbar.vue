@@ -18,7 +18,7 @@ const updateCartbarStatus = () => {
               <img class="cart-bag" src="~/assets/icons/cart-bag.png" alt="No Image">
               <span>0 {{ $t('cart.info') }}</span>
             </div>
-            <button class="btn-close">{{ $t('cart.buttonTitle') }}</button>
+            <button class="btn-close" @click="updateCartbarStatus">{{ $t('cart.buttonTitle') }}</button>
           </div>
           <div class="delivery-policy">
             <div class="policy-info">{{ $t('cart.deliveryPolicy') }}</div>

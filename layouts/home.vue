@@ -25,7 +25,7 @@ const updateCartbarStatus = () => {
               <p>0 ITEMS</p>
             </div>
             <div class="amount">
-              ৳ 10200
+              ৳ 0
             </div>
           </div>
           <slot />
