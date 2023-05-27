@@ -55,7 +55,7 @@ const updateCartbarStatus = () => {
               <p>{{ $t('cart.specialCodeHeader') }}</p>
             </div>
             <div class="special-code-body">
-                <input class="input" type="text" placeholder="রেফারেল/ডিসকাউন্ট কোড">
+                <input class="input" type="text" :placeholder="$t('cart.specialCodePlaceholder')">
                 <button class="btn-apply"> Apply</button>
                 <button class="btn-close"> close</button>
             </div>

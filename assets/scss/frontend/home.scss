@@ -88,13 +88,79 @@
 
   .section{
     .section-head{
-
+      .breadcrumb{
+        @include font_style(15px, $black_63, 700);
+      }
     }
 
     .section-body{
+      margin-top: 15px;
       .section-content{
-        .section-item{
-          
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        .section-wrapper{
+          width: 220px;
+          height: 340px;
+          box-sizing: content-box;
+          border-radius: 4px;
+          cursor: pointer;
+          margin: 4px;
+          padding: 6px;
+          &:hover{
+            border: 1px solid $white_E7;
+          }
+          .section-item{
+            padding: 5px;
+            height: 287px;
+            margin-bottom: 6px;
+            border-radius: 4px;
+            @include font_style(14px, $black_63);
+            &:hover{
+              border: 1px solid $white_E7;
+            }
+            .section-img{
+              img{
+                width: 190px;
+                height: 190px;
+              }
+            }
+            .section-name{
+              height: 70px;
+              text-align: center;
+            }
+            .section-price{
+              text-align: center;
+              .new-price{
+                @include font_style(16px, $red_6E, 700);
+                margin-right: 5px;
+              }
+              .old-price{
+                @include font_style(13px, $black_63, 500);
+                text-decoration: line-through;
+              }
+            }
+          }
+          .section-item-overlay{
+            display: none;
+          }
+          .section-btn {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $white_E7;
+            border-radius: 4px;
+            padding: 4px;
+            img{
+              width: 24px;                
+            }
+            p{
+              @include font_style(14px, #129450, bold);
+              margin-left: 5px;
+            }
+          }
         }
       }
     }
