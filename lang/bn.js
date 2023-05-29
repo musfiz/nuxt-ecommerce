@@ -14,5 +14,9 @@ export default {
     specialCodeHeader: 'স্পেশাল কোড আছে?',
     specialCodePlaceholder: 'রেফারেল/ডিসকাউন্ট কোড',
     hotline: 'হটলাইন',
-  }
+    addToBag: 'ব্যাগে যোগ ',
+  },
+  product: {
+    details: 'বিস্তারিত',
+  },
 }

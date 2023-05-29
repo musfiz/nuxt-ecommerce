@@ -1,5 +1,4 @@
-<script setup lang="ts">
-let products = reactive([
+const products = reactive([
   {
     id: 1,
     productName: 'Chaldal Premium Beef Mixed Cut Bone In ± 50 gm',
@@ -97,75 +96,3 @@ let products = reactive([
     }
   }
 ])
-
-const hover = (id, overlay = false) => {
-  const index = products.findIndex((obj) => obj.id == id)
-  products[index].options.overlay = overlay
-}
-
-</script>
-<template>
-  <div>
-    <div class="section">
-      <div class="section-head">
-        <div class="breadcrumb">জনপ্রিয়</div>
-      </div>
-      <div class="section-body">
-        <div class="section-content">
-          <!-- this will be a loop  -->
-          <div class="section-item-wrapper" v-for="item in products" :key="item.id">
-            <div class="section-item" @mouseenter="hover(item.id, true)" @mouseleave="hover(item.id)">
-              <div class="section-product">
-                <div class="product-img">
-                  <img :src="`frontend/popular/${item.id}.jpg`" alt="No Image">
-                </div>
-                <div class="product-name">
-                  {{ $i18n.locale == 'en' ? item.productName : item.productNameBn }}
-                </div>
-                <div class="overlay" :class="item.options.overlay ? 'show' : ''">
-                  <div class="product-manage-cart">
-                    <!-- <div class="add-text">
-                      Add to shopping bag
-                    </div> -->
-                    <div class="cart-content">
-                      <div class="amount">
-                        ৳ 1200
-                      </div>
-                      <div class="manage-quantity">
-                        <div class="remove">
-                          <p>-</p>
-                        </div>
-                        <div class="quantity">
-                            1
-                        </div>
-                        <div class="add">
-                          <p>+</p>
-                        </div>
-                      </div>
-                      <div class="status">
-                        In Bag
-                      </div>
-                    </div>
-                  </div>
-                  <div class="product-details">
-                   {{ $t('product.details') }} >>
-                  </div>
-                </div>
-              </div>
-
-              <div class="section-price">
-                <span class="new-price">৳ {{ item.price }}</span>
-                <span v-show="item.oldPrice" class="old-price">৳ {{ item.oldPrice }}</span>
-              </div>
-            </div>
-            <div class="section-btn">
-              <img src="~/assets/icons/add.png" alt="">
-              <p>{{ $t('cart.addToBag') }}</p>
-            </div>
-          </div>
-          <!-- this will be a loop  -->
-        </div>
-      </div>
-    </div>
-  </div>
-</template>
