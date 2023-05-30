@@ -120,7 +120,7 @@
           box-sizing: content-box;
           border-radius: 4px;
           cursor: pointer;
-          margin: 4px;
+          margin: 25px 4px;
           padding: 6px;
 
           &:hover {
@@ -209,7 +209,7 @@
                         @include font_style(55px, $orange_61, 700);
                       }
                       .add{
-                        border: 3px solid $white;
+                        border: 3px solid $white_F8;
                         border-radius: 50%;
                         width: 24px;
                         height: 24px;
