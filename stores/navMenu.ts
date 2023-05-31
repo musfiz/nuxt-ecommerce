@@ -10,11 +10,11 @@ export const useNavMenuStore = defineStore('navMenu', {
     getSelectedMenu: (state) => state.selectedMenu
   },
   actions: {
-    updateHamburgerMenuStatus(status:Boolean){
-      this.hamburgerMenuStatus = status
+    updateHamburgerMenuStatus(payload:boolean){
+      this.hamburgerMenuStatus = payload
     },
     updateSelectedMenu(payload:Object){
       this.selectedMenu = payload
-    }
+    }    
   }
 })

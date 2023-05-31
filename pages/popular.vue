@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { useDialogStore } from '~/stores/dialog'
+const dialog = useDialogStore()
+let state = reactive({
+  showDialog: false
+})
 let products = reactive([
   {
     id: 1,
@@ -103,6 +108,10 @@ const hover = (id, overlay = false) => {
   products[index].options.overlay = overlay
 }
 
+const showProductDetails = () => {
+  dialog.updateDetailsDialogStatus(true)
+}
+
 </script>
 <template>
   <div>
@@ -121,12 +130,12 @@ const hover = (id, overlay = false) => {
                 </div>
                 <div class="product-name">
                   {{ $i18n.locale == 'en' ? item.productName : item.productNameBn }}
-                </div> 
+                </div>
                 <div class="overlay" :class="item.options.overlay ? 'show' : ''">
                   <div class="product-manage-cart">
                     <!-- <div class="add-text">
-                      Add to shopping bag
-                    </div> -->
+                          Add to shopping bag
+                        </div> -->
                     <div class="cart-content">
                       <div class="amount">
                         ৳ 1200
@@ -136,7 +145,7 @@ const hover = (id, overlay = false) => {
                           <p>-</p>
                         </div>
                         <div class="quantity">
-                            1
+                          1
                         </div>
                         <div class="add">
                           <p>+</p>
@@ -147,8 +156,8 @@ const hover = (id, overlay = false) => {
                       </div>
                     </div>
                   </div>
-                  <div class="product-details">
-                   {{ $t('product.details') }} >>
+                  <div class="product-details" @click="showProductDetails">
+                    {{ $t('product.details') }} >>
                   </div>
                 </div>
               </div>
@@ -167,5 +176,8 @@ const hover = (id, overlay = false) => {
         </div>
       </div>
     </div>
+    <!-- Details modal for each product -->
+    <Modal v-show="dialog.getDetailsDialogStatus" :width="900" :height="700" :header="'Product Details'"></Modal>
+    <!-- Details modal for each product -->
   </div>
 </template>

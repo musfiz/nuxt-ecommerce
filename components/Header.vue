@@ -1,21 +1,17 @@
 <script setup lang="ts">
 import { useNavMenuStore } from '~/stores/navMenu';
+import { useDialogStore } from '~/stores/dialog';
 const navMenuStore = useNavMenuStore()
+const dialog = useDialogStore()
+
 //reactive state
-const state = reactive({
-  showDialog: false
-})
 function toggleSideNavbar() {
   const status = navMenuStore.getHamburgerMenuStatus
   navMenuStore.updateHamburgerMenuStatus(!status)
 }
 
 const showDialog = () => {
-  state.showDialog = true
-}
-
-const closeDialog = () => {
-  state.showDialog = false
+  dialog.updateLoginDialogStatus(true)
 }
 
 </script>
@@ -69,7 +65,7 @@ const closeDialog = () => {
               <a href="#">{{ $t('header.cart') }}  <img :src="'frontend/icons/cart.svg'" alt=""></a>               
           </div> -->
     </div>
-    <Modal v-show="state.showDialog" :width="400" :height="300" :header="'Sign In'" @close-dialog="closeDialog">
+    <Modal v-show="dialog.getLoginDialogStatus" :width="400" :height="300" :header="'Sign In'">
       <h3>Sign In</h3>
       <p>Successfully add slot in Sign in modal dialog.</p>
     </Modal>

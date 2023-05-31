@@ -6,33 +6,46 @@
   right: 0;
   display: flex;
   justify-content: center;
-  background-color: #000000da;
+  background-color: rgba(0, 0, 0, .4);
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  -ms-transition: all .3s ease;
+  transition: all .3s ease;
+
   .modal {
     text-align: center;
     background-color: $white;
     margin-top: 8%;
     border-radius: 5px;
+    position: fixed;
+    overflow: hidden;
 
     .modal-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       height: 50px;
-      margin-bottom: 10px;;
+      margin-bottom: 10px;
+      ;
       padding: 0 10px;
       border-bottom: 1px solid $white_E7;
-      .header-text{
+
+      .header-text {
         padding-left: 5px;
         @include font_style(17px, $black_29, 700);
       }
-      .btn-close{
+
+      .btn-close {
         display: flex;
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        svg{
+
+        svg {
           color: $black_63;
-          &:hover{
+
+          &:hover {
             color: $black;
           }
         }
