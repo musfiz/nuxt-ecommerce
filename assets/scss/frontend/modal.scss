@@ -1,0 +1,44 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #000000da;
+  .modal {
+    text-align: center;
+    background-color: $white;
+    margin-top: 8%;
+    border-radius: 5px;
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 50px;
+      margin-bottom: 10px;;
+      padding: 0 10px;
+      border-bottom: 1px solid $white_E7;
+      .header-text{
+        padding-left: 5px;
+        @include font_style(17px, $black_29, 700);
+      }
+      .btn-close{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        svg{
+          color: $black_63;
+          &:hover{
+            color: $black;
+          }
+        }
+      }
+    }
+
+    .modal-body {}
+  }
+}
