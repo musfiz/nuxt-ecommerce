@@ -106,40 +106,38 @@
     }
 
     .section-body {
-      margin-top: 15px;
-
+      // margin-top: 15px;
       .section-content {
         display: flex;
         align-items: center;
         justify-content: flex-start;
         flex-wrap: wrap;
-
         .section-item-wrapper {
-          width: 220px;
-          height: 350px;
+          width: 218px;
           border-radius: 4px;
           cursor: pointer;
-          margin: 25px 10px;
-          padding: 6px;
-
+          margin: 25px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding: 6px 0;
+          border: 1px solid transparent;
           &:hover {
             border: 1px solid $white_E7;
           }
 
           .section-item {
-            padding: 5px;
-            margin-bottom: 6px;
+            margin: 5px;
             border-radius: 4px;
-            @include font_style(14px, $black_63);
-
-            &:hover {
-              border: 1px solid $white_E7;
-            }
 
             .section-product {
-              height: 278px;
+              width: 208px;
+              height: 270px;
 
               .product-img {
+                display: flex;
+                align-items: center;
                 img {
                   width: 190px;
                   height: 190px;
@@ -148,7 +146,7 @@
 
               .product-name {
                 height: 70px;
-                width: 200px;
+                width: 190px;
                 text-align: center;
                 @include font_style(13px, #000, 500);
               }
@@ -159,38 +157,43 @@
                 justify-content: center;
                 flex-direction: column;
                 position: relative;
-                width: 218px;
-                height: 288px;
-                right: 5px;
-                bottom: 270px;
-                background-color: rgba(40,40,40,.75);
+                height: 270px;
+                right: 0;
+                bottom: 266px;
+                background-color: rgba(40, 40, 40, .75);
                 border-radius: 4px;
-                .product-manage-cart{
-                  .add-text{
+
+                .product-manage-cart {
+                  .add-text {
                     width: 100px;
                     position: relative;
                     @include font_style(20px, $white, 700);
                     text-align: center;
                     line-height: 1.5;
                   }
-                  .cart-content{
+
+                  .cart-content {
                     display: flex;
                     align-items: center;
                     justify-content: space-evenly;
                     flex-direction: column;
-                    .amount{  
+
+                    .amount {
                       @include font_style(18px, $white, 700);
                     }
-                    .status{
+
+                    .status {
                       @include font_style(15px, $white, 700);
                     }
-                    .manage-quantity{
+
+                    .manage-quantity {
                       display: flex;
                       align-items: center;
                       justify-content: space-between;
                       width: 140px;
                       margin: 40px 0;
-                      .remove{
+
+                      .remove {
                         border: 3px solid $white;
                         border-radius: 50%;
                         width: 24px;
@@ -200,15 +203,18 @@
                         justify-content: center;
                         padding-bottom: 2px;
                         @include font_style(35px, $white, 700);
-                        &:hover{
+
+                        &:hover {
                           color: $orange_61;
                           border: 3px solid $orange_61;
-                        }                   
+                        }
                       }
-                      .quantity{
+
+                      .quantity {
                         @include font_style(55px, $orange_61, 700);
                       }
-                      .add{
+
+                      .add {
                         border: 3px solid $white_F8;
                         border-radius: 50%;
                         width: 24px;
@@ -218,23 +224,29 @@
                         justify-content: center;
                         padding-bottom: 2px;
                         @include font_style(22px, $white, 700);
-                        &:hover{
+
+                        &:hover {
                           color: $orange_61;
                           border: 3px solid $orange_61;
-                        }     
+                        }
                       }
                     }
-                   }
+                  }
                 }
+
                 .product-details {
                   position: absolute;
-                  height: 22px;
-                  width: 100%;
-                  top: 286px;
+                  height: 28px;
+                  width: 206px;
+                  top: 266px;
                   background-color: #fff;
                   display: flex;
                   align-items: center;
                   justify-content: center;
+                  border: 1px solid $white_E7;
+                  border-bottom-right-radius: 4px;
+                  border-bottom-left-radius: 4px;
+                  @include font_style(12px, $black_63, 600);
                 }
 
                 &.show {
@@ -242,31 +254,35 @@
                 }
               }
             }
+
+            .section-price {
+              text-align: center;
+
+              .new-price {
+                @include font_style(16px, $red_6E, 700);
+                margin-right: 5px;
+              }
+
+              .old-price {
+                @include font_style(13px, $black_63, 500);
+                text-decoration: line-through;
+              }
+            }
           }
 
-          .section-price {
-            text-align: center;
 
-            .new-price {
-              @include font_style(16px, $red_6E, 700);
-              margin-right: 5px;
-            }
-
-            .old-price {
-              @include font_style(13px, $black_63, 500);
-              text-decoration: line-through;
-            }
-          }
 
           .section-btn {
+            width: 206px;
+            height: 35px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 1px solid $white_E7;
             border-radius: 4px;
-            padding: 4px;
             transition: all ease-in-out .15s;
+
             img {
               width: 24px;
             }

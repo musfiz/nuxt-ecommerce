@@ -116,17 +116,17 @@ const hover = (id, overlay = false) => {
           <div class="section-item-wrapper" v-for="item in products" :key="item.id">
             <div class="section-item" @mouseenter="hover(item.id, true)" @mouseleave="hover(item.id)">
               <div class="section-product">
-                <!-- <div class="product-img">
+                <div class="product-img">
                   <img :src="`frontend/popular/${item.id}.jpg`" alt="No Image">
                 </div>
                 <div class="product-name">
                   {{ $i18n.locale == 'en' ? item.productName : item.productNameBn }}
-                </div> -->
-                <!-- <div class="overlay" :class="item.options.overlay ? 'show' : ''">
+                </div> 
+                <div class="overlay" :class="item.options.overlay ? 'show' : ''">
                   <div class="product-manage-cart">
-                    <div class="add-text">
+                    <!-- <div class="add-text">
                       Add to shopping bag
-                    </div>
+                    </div> -->
                     <div class="cart-content">
                       <div class="amount">
                         ৳ 1200
@@ -150,7 +150,7 @@ const hover = (id, overlay = false) => {
                   <div class="product-details">
                    {{ $t('product.details') }} >>
                   </div>
-                </div> -->
+                </div>
               </div>
 
               <div class="section-price">
